@@ -7,73 +7,53 @@ public class AstroAttract : MonoBehaviour
     [SerializeField] AstroScript astroScr;
 
     private bool isTouchingObstacle;
-    [SerializeField] private float checkRadius = 0.5f;
-    [SerializeField] private Vector2 obstacleCheckSize;
-    [SerializeField] private Vector3 offset;
-    [SerializeField] private Transform obstacleCheck;
-    [SerializeField] private LayerMask whatIsObstacle;
-    private int[] isTouching;
-
-    [SerializeField] private GameObject obstacle;
-
     internal bool cling;
+    [SerializeField] private LayerMask whatIsObstacle;
+    private Vector3 posCur;
+    private Quaternion rotCur;
 
-    //internal bool canShoot = true;
+    [SerializeField] internal GameObject arrow;
 
     private void Start()
     {
         print("Astro Attrac");
+        astroScr.rb.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     private void Update()
     {
-        Vector2 boxPosition = transform.position;
-        Vector2 boxSize = obstacleCheckSize;
-        //isTouchingObstacle = Physics2D.OverlapCircle(obstacleCheck.position, checkRadius, whatIsObstacle);
-        //isTouchingObstacle = Physics2D.OverlapBox(Vector3.zero + offset, obstacleCheckSize, this.transform.rotation.z, whatIsObstacle);
-        Collider[] isTouchingObstacle = Physics.OverlapBox(Vector3.zero + offset, obstacleCheckSize * 0.5f, transform.rotation, whatIsObstacle);
-        print(isTouchingObstacle.Length);
-        if (isTouchingObstacle.Length > 0 && (Input.GetButtonDown("Fire2")))
+        RaycastHit2D hit = new RaycastHit2D();
+        hit = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.up), .4f, whatIsObstacle);
+        if (hit.collider.tag == "Obstacle")
         {
-            astroScr.rb.velocity = new Vector2(0, 0);
+            isTouchingObstacle = true;
+        }
+        else
+        {
+            isTouchingObstacle = false;
+        }
+
+        rotCur = Quaternion.FromToRotation(Vector3.up, hit.normal);
+        posCur = new Vector3(transform.position.x, hit.point.y, transform.position.z);
+
+        if (isTouchingObstacle && (Input.GetButtonDown("Fire2")))
+        {
+            astroScr.rb.velocity = Vector2.zero;
             astroScr.canShoot = false;
             astroScr.mouseRotationActive = false;
             cling = true;
-            //transform.position = Vector2.Lerp(this.transform.position, obstacle.transform.position, 3f);
-        }
-        else if(isTouchingObstacle.Length == 0 && (Input.GetButtonUp("Fire2")))
-        {
-            astroScr.canShoot = true;
-            astroScr.mouseRotationActive = true;
-            cling = false;
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotCur, 5f);
+            astroScr.rb.AddForce(posCur * 10f);
+            astroScr.rb.drag = 5f;
+
+            arrow.SetActive(true);
         }
     }
 
     private void OnDrawGizmos()
     {
-        /*Color prevColor = Gizmos.color;
-        Matrix4x4 prevMatrix = Gizmos.matrix;
-
         Gizmos.color = Color.red;
-        Gizmos.matrix = transform.localToWorldMatrix;
-
-        Vector2 boxPosition = transform.position;
-
-        // convert from world position to local position 
-        boxPosition = transform.InverseTransformPoint(boxPosition);
-
-        Vector2 boxSize = obstacleCheckSize;*/
-
-        /*Gizmos.matrix = this.transform.localToWorldMatrix;
-        Gizmos.color = Color.red;
-        Gizmos.DrawCube(Vector3.zero + offset, obstacleCheckSize);*/
-        
-        Gizmos.matrix = this.transform.localToWorldMatrix;
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(Vector3.zero + offset, obstacleCheckSize);
-
-        // restore previous Gizmos settings
-        /*Gizmos.color = prevColor;
-        Gizmos.matrix = prevMatrix;*/
+        Gizmos.DrawRay(transform.position, transform.TransformDirection(0f, -0.4f, 0f));
     }
 }

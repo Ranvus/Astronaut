@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Character Scripts\AstroManeuver.cs" />
     <Compile Include="Assets\Scripts\Character Scripts\AstroScript.cs" />
     <Compile Include="Assets\Scripts\Character Scripts\AstroShoot.cs" />
+    <Compile Include="Assets\Scripts\Character Scripts\FauxGravityAttractor.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

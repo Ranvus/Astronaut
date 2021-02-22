@@ -24,6 +24,7 @@ public class AstroScript : MonoBehaviour
     internal bool canShoot = true;
     internal bool mouseRotationActive = true;
 
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
