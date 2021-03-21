@@ -8,7 +8,6 @@ public class AstroArrow : MonoBehaviour
 
 
     [Header("Arrow variables")]
-    private Vector3 arrowMousePos;
     [SerializeField] private Transform player;
 
     void Start()
@@ -18,18 +17,12 @@ public class AstroArrow : MonoBehaviour
 
     void Update()
     {
-        //Vector2 dashDir = (arrowMousePos - player.position).normalized; //Нормализированное значение направления мыши
-        //float angle = Mathf.Atan2(dashDir.y, dashDir.x) * Mathf.Rad2Deg + 90f; //Угол на который должна повернуться рука
-        //transform.rotation = Quaternion.Euler(0, 0, angle); //Применение высчитанного угла
-
         Vector3 dashDir = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.position).normalized; //Нормализированное значение направления мыши с учетом позиции пресонажа
-
-        // flatten z axis
-        dashDir.z = 0;
+        dashDir.z = 0; //Сглаживание оси Z
 
         Vector3 neutralDir = player.up; //Присваивает neutralDir значение вектора поворота оси Y(зеленая координата). В отличии от Vector2.up учитывает вращение
-        float angle = Vector3.SignedAngle(neutralDir, dashDir, Vector3.forward);
-        angle = Mathf.Clamp(angle, -astroScr.clampAngle, astroScr.clampAngle);
+        float angle = Vector3.SignedAngle(neutralDir, dashDir, Vector3.forward); //
+        angle = Mathf.Clamp(angle, -astroScr.clampAngle, astroScr.clampAngle); //Ограничивает вращение стрелки 
 
         // rotate neutral dir by the clamped angle
         dashDir = Quaternion.AngleAxis(angle, Vector3.forward) * neutralDir;
@@ -38,20 +31,28 @@ public class AstroArrow : MonoBehaviour
         // and local forward in global forward
         transform.rotation = Quaternion.LookRotation(Vector3.forward, dashDir);
 
-        //print(transform.localEulerAngles);
-
         if (Input.GetButtonDown("Fire1"))
         {
             //Булевые
             astroScr.mouseRotationActive = true;
-            astroScr.astroAttractScr.arrow.SetActive(false);
+            astroScr.arrow.SetActive(false);
             astroScr.astroInputScr.rotateBtnActive = true;
-            astroScr.canShoot = true;
+            MonoBehaviour camMono = Camera.main.GetComponent<MonoBehaviour>(); //Считывание MonoBehaviour камеры для последующего запуска там корутина
+            camMono.StartCoroutine(ShootStart()); //Запуск корутина на камере
 
             //Физика
-            astroScr.rb.drag = 0f;
+            //astroScr.rb.drag = 0f;
             astroScr.rb.velocity = Vector2.zero;
             astroScr.rb.AddForce(dashDir * 15f, ForceMode2D.Impulse);
         }
+
     }
+
+    public IEnumerator ShootStart()
+    {
+        yield return new WaitForSeconds(.1f);
+
+        astroScr.canShoot = true;
+    }
+
 }

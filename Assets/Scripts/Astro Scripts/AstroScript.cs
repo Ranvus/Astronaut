@@ -22,11 +22,15 @@ public class AstroScript : MonoBehaviour
     [SerializeField] internal float rotationSpeed = 5f;
     [SerializeField] internal float bulletForce = 20f;
     [SerializeField] internal float clampAngle = 90f;
+    [SerializeField] internal float downLookAngle = 150f;
+    [SerializeField] internal float upLookAngle = 30f;
 
     [Header("Boolean variables")]
     internal bool canShoot = true;
     internal bool mouseRotationActive = true;
 
+    [Header("References variables")]
+    [SerializeField] internal GameObject arrow;
 
     private void Awake()
     {

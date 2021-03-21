@@ -8,14 +8,12 @@ public class AstroManeuver : MonoBehaviour
 
     [Header("Maneuver variables")]
     internal Vector2 mousePos;
-    internal float angle;
 
     [Header("Other ref")]
-    [SerializeField] internal GameObject handRot;
-    [SerializeField] internal GameObject firePointRot;
+    [SerializeField] internal Transform handRot;
+    [SerializeField] internal Transform secondHandRot;
+    [SerializeField] internal Transform firePointRot;
 
-    internal bool right;
-    
     private void Start()
     {
         print("Astro Man");
@@ -30,18 +28,24 @@ public class AstroManeuver : MonoBehaviour
     {
         astroScr.astroManScr.ClampVelocity();
 
-        //Разворот персонажа в зависимости от расположения руки
-        if (astroScr.astroHandsChScr.angle < 180f && astroScr.astroHandsChScr.angle > 0f)
+        if (!astroScr.astroAnimScr.bodyUp && !astroScr.astroAnimScr.bodyDown)
         {
-            transform.localScale = new Vector3(1, 1, 1);
-            handRot.transform.localScale = new Vector3(1, 1, 1);
-            firePointRot.transform.localRotation = Quaternion.Euler(0, 0, 90);
-        }
-        else if (astroScr.astroHandsChScr.angle > -180f && astroScr.astroHandsChScr.angle < 0f)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-            handRot.transform.localScale = new Vector3(-1, -1, 1);
-            firePointRot.transform.localRotation = Quaternion.Euler(0, 180, 90);
+            //Разворот персонажа в зависимости от расположения руки
+            if (astroScr.astroHandsChScr.angle < 180f && astroScr.astroHandsChScr.angle > 0f)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+                handRot.localScale = new Vector3(1, 1, 1);
+                secondHandRot.localScale = new Vector3(1, 1, 1);
+                firePointRot.localRotation = Quaternion.Euler(0, 0, 90);
+            }
+            else if (astroScr.astroHandsChScr.angle > -180f && astroScr.astroHandsChScr.angle < 0f)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(-1, 1, 1), Time.deltaTime);
+                handRot.localScale = new Vector3(-1, -1, 1);
+                secondHandRot.localScale = new Vector3(-1, -1, -1);
+                firePointRot.localRotation = Quaternion.Euler(0, 180, 90);
+            }
         }
     }
 

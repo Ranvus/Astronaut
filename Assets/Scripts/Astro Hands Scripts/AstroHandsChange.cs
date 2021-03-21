@@ -31,15 +31,13 @@ public class AstroHandsChange : MonoBehaviour
         Vector3 neutralDir = player.up; //Присваивает neutralDir значение вектора поворота оси Y(зеленая координата). В отличии от Vector2.up учитывает вращение
         angle = Vector3.SignedAngle(neutralDir, astroHands.aimDir, Vector3.forward);
 
-        Debug.Log("Angle: " + angle);
-
-        if (angle > 150f || angle < -150f)
+        if (angle > astroScr.downLookAngle || angle < -astroScr.downLookAngle)
         {
             anim.SetBool("HandsDown", true);
             transform.localPosition = new Vector3(-0.045f, 0.139f, -19.19f);
             firePoint.localPosition = new Vector3(-0.332f, -0.043f, 21.56f);
         }
-        else if (angle < 30f && angle > -30f)
+        else if (angle < astroScr.upLookAngle && angle > -astroScr.upLookAngle)
         {
             anim.SetBool("HandsUp", true);
             transform.localPosition = new Vector3(-0.045f, 0.3f, -19.19f);
@@ -52,8 +50,5 @@ public class AstroHandsChange : MonoBehaviour
             transform.localPosition = new Vector3(0.073f, 0.183f, -19.19f);
             firePoint.localPosition = new Vector3(-0.5f, 0.058f, 21.56f);
         }
-
-
-        //anim.SetFloat("HandsAngle", angle);
     }
 }

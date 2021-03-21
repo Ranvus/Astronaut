@@ -10,25 +10,35 @@ public class AstroAnimation : MonoBehaviour
 
     [SerializeField] private Transform hands;
 
+    internal bool bodyUp;
+    internal bool bodyDown;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
     }
     void Update()
     {
-        //anim.SetFloat("HandsAngle", hands.eulerAngles.z);
-        if (astroScr.astroHandsChScr.angle > 150f || astroScr.astroHandsChScr.angle < -150f)
+        AnimUpdate();
+
+        if (astroScr.astroHandsChScr.angle > astroScr.downLookAngle || astroScr.astroHandsChScr.angle < -astroScr.downLookAngle)
         {
-            anim.SetBool("BodyDown", true);
+            bodyDown = true;
         }
-        else if (astroScr.astroHandsChScr.angle < 20f && astroScr.astroHandsChScr.angle > -20f)
+        else if (astroScr.astroHandsChScr.angle < astroScr.upLookAngle && astroScr.astroHandsChScr.angle > -astroScr.upLookAngle)
         {
-            anim.SetBool("BodyUp", true);
+            bodyUp = true;
         }
         else
         {
-            anim.SetBool("BodyDown", false);
-            anim.SetBool("BodyUp", false);
+            bodyUp = false;
+            bodyDown = false;
         }
+    }
+
+    private void AnimUpdate()
+    {
+        anim.SetBool("BodyDown", bodyDown);
+        anim.SetBool("BodyUp", bodyUp);
     }
 }
