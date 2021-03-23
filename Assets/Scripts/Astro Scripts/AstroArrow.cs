@@ -41,7 +41,7 @@ public class AstroArrow : MonoBehaviour
             camMono.StartCoroutine(ShootStart()); //Запуск корутина на камере
 
             //Физика
-            //astroScr.rb.drag = 0f;
+            astroScr.rb.drag = 0f;
             astroScr.rb.velocity = Vector2.zero;
             astroScr.rb.AddForce(dashDir * 15f, ForceMode2D.Impulse);
         }

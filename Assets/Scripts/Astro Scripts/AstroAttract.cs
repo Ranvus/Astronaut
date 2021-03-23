@@ -52,7 +52,7 @@ public class AstroAttract : MonoBehaviour
             transform.rotation = Quaternion.Lerp(transform.rotation, rotCur, 5f);
             //transform.position = Vector3.Lerp(transform.position, posCur, Time.deltaTime * 5f);
             //transform.position -= new Vector3(transform.position.x, transform.position.y, transform.position.z) - new Vector3(hit.point.x - .2f, hit.point.y - .2f, 0);
-            if (posDif.x > 0)
+            /*if (posDif.x > 0)
             {
                 transform.position += new Vector3(-.5f, 0f);
             }
@@ -63,7 +63,7 @@ public class AstroAttract : MonoBehaviour
             else if(posDif.x == 0)
             {
                 transform.position += Vector3.zero;
-            }
+            }*/
             astroScr.rb.AddForce(hit.point * 20f);
         }
     }
