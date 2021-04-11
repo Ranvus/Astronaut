@@ -36,6 +36,7 @@ public class AstroArrow : MonoBehaviour
             //Булевые
             astroScr.mouseRotationActive = true;
             astroScr.arrow.SetActive(false);
+            //astroScr.hand.SetActive(true);
             astroScr.astroInputScr.rotateBtnActive = true;
             MonoBehaviour camMono = Camera.main.GetComponent<MonoBehaviour>(); //Считывание MonoBehaviour камеры для последующего запуска там корутина
             camMono.StartCoroutine(ShootStart()); //Запуск корутина на камере
@@ -44,6 +45,8 @@ public class AstroArrow : MonoBehaviour
             astroScr.rb.drag = 0f;
             astroScr.rb.velocity = Vector2.zero;
             astroScr.rb.AddForce(dashDir * 15f, ForceMode2D.Impulse);
+            astroScr.hand.transform.localPosition = new Vector3(0.073f, 0.183f, -19.19f);
+            astroScr.astroShootScr.firePoint.localPosition = new Vector3(-0.5f, 0.058f, 21.56f);
         }
 
     }

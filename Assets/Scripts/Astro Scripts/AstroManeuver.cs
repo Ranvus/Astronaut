@@ -72,4 +72,3 @@ public class AstroManeuver : MonoBehaviour
         t.Rotate(0, 0, amount);
     }
 }
-

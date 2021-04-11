@@ -31,6 +31,8 @@ public class AstroScript : MonoBehaviour
 
     [Header("References variables")]
     [SerializeField] internal GameObject arrow;
+    [SerializeField] internal GameObject hand;
+    [SerializeField] internal LayerMask obstacleLayer;
 
     private void Awake()
     {

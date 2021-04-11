@@ -7,7 +7,7 @@ public class AstroShoot : MonoBehaviour
     [SerializeField] AstroScript astroScr;
 
     [Header("Shoot variables")]
-    [SerializeField] private Transform firePoint;
+    [SerializeField] internal Transform firePoint;
     [SerializeField] private GameObject bulletPrefab;
 
     [Header("Bullet сomponents")]

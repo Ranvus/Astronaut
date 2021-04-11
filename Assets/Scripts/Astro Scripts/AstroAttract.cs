@@ -7,8 +7,7 @@ public class AstroAttract : MonoBehaviour
     [SerializeField] AstroScript astroScr;
 
     [Header("Attract variables")]
-    [SerializeField] private LayerMask whatIsObstacle;
-    private bool isTouchingObstacle;
+    internal bool isTouchingObstacle;
     private Vector3 posCur;
     private Quaternion rotCur;
 
@@ -21,7 +20,7 @@ public class AstroAttract : MonoBehaviour
     private void Update()
     {
         RaycastHit2D hit = new RaycastHit2D(); //Инициализация луча для распознования столкновения
-        hit = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.up), .7f, whatIsObstacle); //Задания параметров луча
+        hit = Physics2D.Raycast(transform.position, transform.TransformDirection(-Vector3.up), .7f, astroScr.obstacleLayer); //Задания параметров луча
 
         if (hit.collider.tag == "Obstacle")
         {
@@ -36,7 +35,6 @@ public class AstroAttract : MonoBehaviour
         posCur = new Vector3(hit.point.x, hit.point.y, transform.position.z); //Координаты точки, где луч сталкивается с платформой.
 
         Vector2 posDif = new Vector2(transform.position.x, transform.position.y) - new Vector2(hit.point.x, hit.point.y);
-        print(posDif);
 
         if (isTouchingObstacle && (Input.GetButtonDown("Fire2")))
         {
@@ -45,6 +43,7 @@ public class AstroAttract : MonoBehaviour
             astroScr.mouseRotationActive = false;
             astroScr.astroInputScr.rotateBtnActive = false;
             astroScr.arrow.SetActive(true);
+            //astroScr.hand.SetActive(false);
 
             //Физика
             astroScr.rb.velocity = Vector2.zero; 

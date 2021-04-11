@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MushroomController : MonoBehaviour
 {
-    [SerializeField] float shootingRange;
+    [SerializeField] private float shootingRange;
 
     private Transform player;
 

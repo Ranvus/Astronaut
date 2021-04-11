@@ -14,7 +14,7 @@ public class MushroomBullet : MonoBehaviour
     private void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.position, mushBulletSpeed * Time.deltaTime);
-        Destroy(this.gameObject, 5);
+        Destroy(this.gameObject, 10);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

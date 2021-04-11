@@ -7,6 +7,7 @@ TagManager:
   - Obstacle
   - Enemy
   - Character
+  - Facehugger
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - 
   - 
   - Obstacle
-  - 
+  - WayPoint
   - 
   - 
   - 

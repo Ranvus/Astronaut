@@ -12,6 +12,9 @@ ScriptsOnlyBuild:
     - AstroScript
     - AstroShoot
     - Bullet
+    - MushroomBullet
+    - MushroomController
+    - TentacleController
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
     - Cinemachine.CinemachineFramingTransposer
@@ -35,10 +38,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -62,8 +63,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 58
       Script: {instanceID: 0}
-    - Class: 61
-      Script: {instanceID: 0}
     - Class: 62
       Script: {instanceID: 0}
     - Class: 66
@@ -83,9 +82,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 594}
     - Class: 114
-      Script: {instanceID: 11764}
+      Script: {instanceID: 11760}
     - Class: 114
-      Script: {instanceID: 11820}
+      Script: {instanceID: 11816}
+    - Class: 114
+      Script: {instanceID: 12006}
+    - Class: 114
+      Script: {instanceID: 12052}
     - Class: 114
       Script: {instanceID: 12166}
     - Class: 114
@@ -109,11 +112,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13974}
     - Class: 114
-      Script: {instanceID: 14384}
+      Script: {instanceID: 14038}
     - Class: 114
-      Script: {instanceID: 14520}
+      Script: {instanceID: 14386}
     - Class: 114
-      Script: {instanceID: 15120}
+      Script: {instanceID: 14522}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -123,8 +126,6 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
-      Script: {instanceID: 0}
-    - Class: 249
       Script: {instanceID: 0}
     - Class: 19719996
       Script: {instanceID: 0}
@@ -165,12 +166,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
-  - hash:
-      serializedVersion: 2
-      Hash: f64fccdaed3829be05d12b7c8f004fb0
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FauxGravityAttractor
   - hash:
       serializedVersion: 2
       Hash: a2113831d3323f931007e1b3812dc814
@@ -389,10 +384,22 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 273ded0091e640bdf00aee21ff2483af
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MushroomController
+  - hash:
+      serializedVersion: 2
       Hash: 37b861a2f40ccc87f8f5587c245a9a05
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineFreeLook
+  - hash:
+      serializedVersion: 2
+      Hash: 0ac990bce7717040e89ba59a09e5d0e4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MushroomBullet
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -743,7 +750,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 575ca5ceee40ade414238aaf092ae4fe
+      Hash: 157db8acc81daedbe9e2da623ca5487c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AstroScript
@@ -809,7 +816,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 68b7ce4f8d9a2baca5c86e5ec3388d7f
+      Hash: a4b90793fff3b39a48bea2b79bf4c112
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AstroAttract
@@ -831,6 +838,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineInputProvider
+  - hash:
+      serializedVersion: 2
+      Hash: e431d032a0df9bc312e56b9a26fe2286
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TentacleController
   - hash:
       serializedVersion: 2
       Hash: ffd3ed4fcd23b3e7745287c99a637247
