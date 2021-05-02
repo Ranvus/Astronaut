@@ -5,7 +5,6 @@ using UnityEngine;
 public class FacehuggerMovement : MonoBehaviour
 {
     [Header("Scripts")]
-    [SerializeField] AstroScript astroScr;
     [SerializeField] FacehuggerScript faceScr;
 
     [Header("Obstacle Check variables")]
@@ -20,6 +19,8 @@ public class FacehuggerMovement : MonoBehaviour
     internal bool isMove = true;
     private float ZaxiesAdd;
     private int direction;
+
+    [SerializeField] private LayerMask faceObstacleLayer;
 
     void Start()
     {
@@ -38,8 +39,8 @@ public class FacehuggerMovement : MonoBehaviour
 
     private void CheckGroundOrWall()
     {
-        groundDetected = Physics2D.Raycast(groundCheck.position, -transform.up, checkDistance, astroScr.obstacleLayer);
-        wallDetected = Physics2D.Raycast(wallCheck.position, transform.right, checkDistance, astroScr.obstacleLayer);
+        groundDetected = Physics2D.Raycast(groundCheck.position, -transform.up, checkDistance, faceObstacleLayer);
+        wallDetected = Physics2D.Raycast(wallCheck.position, transform.right, checkDistance, faceObstacleLayer);
 
         if (!groundDetected)
         {
@@ -49,7 +50,7 @@ public class FacehuggerMovement : MonoBehaviour
                 transform.eulerAngles = new Vector3(0, 0, ZaxiesAdd);
                 if (direction == 1)
                 {
-                    transform.position = new Vector2(transform.position.x + 0.3f, transform.position.y - 0.2f);
+                    transform.position = new Vector2(transform.position.x + 0.25f, transform.position.y - 0.2f);
                     hasTurn = true;
                     direction = 2;
                 }

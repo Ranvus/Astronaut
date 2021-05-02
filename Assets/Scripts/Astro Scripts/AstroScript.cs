@@ -12,18 +12,26 @@ public class AstroScript : MonoBehaviour
     [SerializeField] internal AstroAttract astroAttractScr;
     [SerializeField] internal AstroAnimation astroAnimScr;
     [SerializeField] internal AstroHandsChange astroHandsChScr;
+    [SerializeField] internal AstroArrow astroArr;
+    [SerializeField] internal AstroTakeDamage astroDmg;
+    [SerializeField] internal AstroHandsRotate astroHandsRot;
 
     [Header("Player components")]
     internal Rigidbody2D rb;
     internal Camera cam;
 
-    [Header("Ship variables")]
+    [Header("Astro move variables")]
+    [SerializeField] internal float hp = 5f;
+
+    [Header("Astro move variables")]
     [SerializeField] internal float clampVelocity = 3f;
     [SerializeField] internal float rotationSpeed = 5f;
-    [SerializeField] internal float bulletForce = 20f;
     [SerializeField] internal float clampAngle = 90f;
     [SerializeField] internal float downLookAngle = 150f;
     [SerializeField] internal float upLookAngle = 30f;
+
+    [Header("Shoot variables")]
+    [SerializeField] internal float bulletForce = 20f;
 
     [Header("Boolean variables")]
     internal bool canShoot = true;
@@ -33,6 +41,7 @@ public class AstroScript : MonoBehaviour
     [SerializeField] internal GameObject arrow;
     [SerializeField] internal GameObject hand;
     [SerializeField] internal LayerMask obstacleLayer;
+    [SerializeField] internal GameObject secondHand;
 
     private void Awake()
     {

@@ -21,6 +21,7 @@ public class AstroAnimation : MonoBehaviour
     {
         AnimUpdate();
 
+        // Решает куда будет смотреть тело вниз, вверх или вбок
         if (astroScr.astroHandsChScr.angle > astroScr.downLookAngle || astroScr.astroHandsChScr.angle < -astroScr.downLookAngle)
         {
             bodyDown = true;
@@ -40,5 +41,6 @@ public class AstroAnimation : MonoBehaviour
     {
         anim.SetBool("BodyDown", bodyDown);
         anim.SetBool("BodyUp", bodyUp);
+        anim.SetBool("IsAttract", astroScr.astroAttractScr.isAttract);
     }
 }

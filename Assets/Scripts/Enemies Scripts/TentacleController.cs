@@ -12,18 +12,26 @@ public class TentacleController : MonoBehaviour
     [SerializeField] private float delay;
     private float currentTime;*/
 
+
+    [Header("References")]
+    private Transform character;
+
+    [Header("Animation variables")]
     private Animator anim;
+    [SerializeField] private bool characterIn;
 
-    [SerializeField] private Transform player;
-
-    [SerializeField] private bool playerIn;
+    [Header("Tentacle variables")]
     [SerializeField] private float attackRange;
+    [SerializeField] private float tentacleHp;
+
+
 
     private void Start()
     {
         /*nextPos = startPos.position;
         currentTime = delay;*/
         anim = GetComponent<Animator>();
+        character = GameObject.FindGameObjectWithTag("Character").transform;
     }
 
     void Update()
@@ -45,15 +53,15 @@ public class TentacleController : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);*/
 
-        float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
+        float distanceFromPlayer = Vector2.Distance(character.position, transform.position);
 
         if (distanceFromPlayer <= attackRange)
         {
-            playerIn = true;
+            characterIn = true;
         }
         else if (distanceFromPlayer >= attackRange)
         {
-            playerIn = false;
+            characterIn = false;
         }
 
         AnimUpdate();
@@ -61,7 +69,25 @@ public class TentacleController : MonoBehaviour
 
     private void AnimUpdate()
     {
-        anim.SetBool("PlayerIn", playerIn);
+        anim.SetBool("CharacterIn", characterIn);
+        anim.SetFloat("TentacleHp", tentacleHp);
+    }
+
+    internal void TakeDamage(int damage)
+    {
+        if (characterIn)
+        {
+            tentacleHp -= damage;
+        }
+        if (tentacleHp <= 0)
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + .5f);
     }
 
     private void OnDrawGizmos()

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FlyController : MonoBehaviour
 {
-    [SerializeField] AstroScript astroScr;
 
     [SerializeField]
     float flySpeed, checkCircleRadius;
@@ -16,6 +15,7 @@ public class FlyController : MonoBehaviour
     float dirX = 1, dirY = .25f;
 
     private Rigidbody2D flyRb;
+    [SerializeField] private LayerMask flyObstacleLayer;
 
     private bool facingRight = true, groundTouch, roofTouch, rightTouch;
 
@@ -32,9 +32,9 @@ public class FlyController : MonoBehaviour
 
     private void HitDetection()
     {
-        rightTouch = Physics2D.OverlapCircle(rightCheck.transform.position, checkCircleRadius, astroScr.obstacleLayer);
-        roofTouch = Physics2D.OverlapCircle(roofCheck.transform.position, checkCircleRadius, astroScr.obstacleLayer);
-        groundTouch = Physics2D.OverlapCircle(groundCheck.transform.position, checkCircleRadius, astroScr.obstacleLayer);
+        rightTouch = Physics2D.OverlapCircle(rightCheck.transform.position, checkCircleRadius, flyObstacleLayer);
+        roofTouch = Physics2D.OverlapCircle(roofCheck.transform.position, checkCircleRadius, flyObstacleLayer);
+        groundTouch = Physics2D.OverlapCircle(groundCheck.transform.position, checkCircleRadius, flyObstacleLayer);
         HitLogic();
     }
 

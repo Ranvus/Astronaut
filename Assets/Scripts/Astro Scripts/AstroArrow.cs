@@ -31,13 +31,16 @@ public class AstroArrow : MonoBehaviour
         // and local forward in global forward
         transform.rotation = Quaternion.LookRotation(Vector3.forward, dashDir);
 
+        // Отталкивание игрока от стены 
         if (Input.GetButtonDown("Fire1"))
         {
             //Булевые
             astroScr.mouseRotationActive = true;
-            astroScr.arrow.SetActive(false);
-            //astroScr.hand.SetActive(true);
             astroScr.astroInputScr.rotateBtnActive = true;
+            astroScr.astroAttractScr.isAttract = false;
+            astroScr.arrow.SetActive(false);
+            astroScr.hand.SetActive(true);
+            astroScr.secondHand.SetActive(true);
             MonoBehaviour camMono = Camera.main.GetComponent<MonoBehaviour>(); //Считывание MonoBehaviour камеры для последующего запуска там корутина
             camMono.StartCoroutine(ShootStart()); //Запуск корутина на камере
 
@@ -45,8 +48,8 @@ public class AstroArrow : MonoBehaviour
             astroScr.rb.drag = 0f;
             astroScr.rb.velocity = Vector2.zero;
             astroScr.rb.AddForce(dashDir * 15f, ForceMode2D.Impulse);
-            astroScr.hand.transform.localPosition = new Vector3(0.073f, 0.183f, -19.19f);
-            astroScr.astroShootScr.firePoint.localPosition = new Vector3(-0.5f, 0.058f, 21.56f);
+            //astroScr.hand.transform.localPosition = new Vector3(0.073f, 0.183f, 0f);
+            //astroScr.astroShootScr.firePoint.localPosition = new Vector3(-0.5f, 0.058f, 0f);
         }
 
     }

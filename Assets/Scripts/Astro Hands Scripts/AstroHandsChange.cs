@@ -14,14 +14,11 @@ public class AstroHandsChange : MonoBehaviour
 
     internal float angle;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -34,21 +31,24 @@ public class AstroHandsChange : MonoBehaviour
         if (angle > astroScr.downLookAngle || angle < -astroScr.downLookAngle)
         {
             anim.SetBool("HandsDown", true);
-            transform.localPosition = new Vector3(-0.045f, 0.139f, -19.19f);
-            firePoint.localPosition = new Vector3(-0.332f, -0.043f, 21.56f);
+            astroScr.secondHand.SetActive(false);
+            //transform.localPosition = new Vector3(-0.045f, 0.139f, 0f);
+            firePoint.localPosition = new Vector3(-0.359f, 0.041f, 0f);
         }
         else if (angle < astroScr.upLookAngle && angle > -astroScr.upLookAngle)
         {
             anim.SetBool("HandsUp", true);
-            transform.localPosition = new Vector3(-0.045f, 0.3f, -19.19f);
-            firePoint.localPosition = new Vector3(-0.431f, 0.047f, 21.56f);
+            astroScr.secondHand.SetActive(false);
+            //transform.localPosition = new Vector3(-0.045f, 0.3f, 0f);
+            firePoint.localPosition = new Vector3(-0.522f, -0.043f, 0f);
         }
         else
         {
             anim.SetBool("HandsDown", false);
             anim.SetBool("HandsUp", false);
-            transform.localPosition = new Vector3(0.073f, 0.183f, -19.19f);
-            firePoint.localPosition = new Vector3(-0.5f, 0.058f, 21.56f);
+            astroScr.secondHand.SetActive(true);
+            //transform.localPosition = new Vector3(0.073f, 0.183f, 0f);
+            firePoint.localPosition = new Vector3(-0.4990001f, 0.058f, 0f);
         }
     }
 }

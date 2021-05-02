@@ -12,11 +12,15 @@ ScriptsOnlyBuild:
     - AstroScript
     - AstroShoot
     - Bullet
-    - MushroomBullet
-    - MushroomController
-    - TentacleController
+    - RoomChange
+    - TurretBullet
+    - TurretGunTrack
+    - TurretScript
+    - TurretShoot
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
+    - Cinemachine.CinemachineComposer
+    - Cinemachine.CinemachineConfiner
     - Cinemachine.CinemachineFramingTransposer
     - Cinemachine.CinemachinePipeline
     - Cinemachine.CinemachineVirtualCamera
@@ -63,6 +67,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 58
       Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
     - Class: 62
       Script: {instanceID: 0}
     - Class: 66
@@ -82,41 +90,49 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 594}
     - Class: 114
-      Script: {instanceID: 11760}
+      Script: {instanceID: 11388}
     - Class: 114
-      Script: {instanceID: 11816}
+      Script: {instanceID: 11474}
     - Class: 114
-      Script: {instanceID: 12006}
+      Script: {instanceID: 11632}
     - Class: 114
-      Script: {instanceID: 12052}
+      Script: {instanceID: 11680}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 11770}
     - Class: 114
-      Script: {instanceID: 12256}
+      Script: {instanceID: 11826}
     - Class: 114
-      Script: {instanceID: 12362}
+      Script: {instanceID: 11880}
     - Class: 114
-      Script: {instanceID: 12482}
+      Script: {instanceID: 12174}
     - Class: 114
-      Script: {instanceID: 12880}
+      Script: {instanceID: 12264}
     - Class: 114
-      Script: {instanceID: 13194}
+      Script: {instanceID: 12370}
     - Class: 114
-      Script: {instanceID: 13476}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 13544}
+      Script: {instanceID: 12720}
     - Class: 114
-      Script: {instanceID: 13630}
+      Script: {instanceID: 12888}
     - Class: 114
-      Script: {instanceID: 13910}
+      Script: {instanceID: 13202}
     - Class: 114
-      Script: {instanceID: 13974}
+      Script: {instanceID: 13474}
     - Class: 114
-      Script: {instanceID: 14038}
+      Script: {instanceID: 13486}
     - Class: 114
-      Script: {instanceID: 14386}
+      Script: {instanceID: 13554}
     - Class: 114
-      Script: {instanceID: 14522}
+      Script: {instanceID: 13640}
+    - Class: 114
+      Script: {instanceID: 13920}
+    - Class: 114
+      Script: {instanceID: 13984}
+    - Class: 114
+      Script: {instanceID: 14398}
+    - Class: 114
+      Script: {instanceID: 14536}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -192,6 +208,12 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
+      Hash: d9f0651d114aa8cd9481308e0c421f7c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RoomChange
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -208,6 +230,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: GroupWeightManipulator
+  - hash:
+      serializedVersion: 2
+      Hash: d50cd804840355f22156aac3c408ff2d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TurretGunTrack
   - hash:
       serializedVersion: 2
       Hash: aeb62f729c52c814dec86c47dcac1471
@@ -240,6 +268,12 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
+      Hash: 5863050c0a18bbd15b0897af6d8818c4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FacehuggerMovement
+  - hash:
+      serializedVersion: 2
       Hash: 32fce7b97c39bff4b4f6c0f53f7e6bf1
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
@@ -270,6 +304,12 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: afe95d40bcf00d874d05a43bde6cdfdd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TurretScript
+  - hash:
+      serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -280,6 +320,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineExternalCamera
+  - hash:
+      serializedVersion: 2
+      Hash: 4fffa4fc6fc23c4e1b7a5cfd89fe494d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TurretBullet
   - hash:
       serializedVersion: 2
       Hash: b5eb08b578a2f2d80bb106cbe65ab501
@@ -348,6 +394,12 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
+      Hash: 3365e5c4e306daa36ae42694a3254d42
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TurretShoot
+  - hash:
+      serializedVersion: 2
       Hash: 87cef3c82381dc586f6772c3e27561b6
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.Experimental.U2D.Animation
@@ -384,22 +436,10 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 273ded0091e640bdf00aee21ff2483af
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MushroomController
-  - hash:
-      serializedVersion: 2
       Hash: 37b861a2f40ccc87f8f5587c245a9a05
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineFreeLook
-  - hash:
-      serializedVersion: 2
-      Hash: 0ac990bce7717040e89ba59a09e5d0e4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MushroomBullet
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -612,10 +652,16 @@ ScriptsOnlyBuild:
     className: CinemachineTargetGroup
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 2a2d7b828da8a3c9b45cde8b8c2e6fa1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bullet
+  - hash:
+      serializedVersion: 2
+      Hash: 6e71fd95e430f4a2bd19f9ac7966aeff
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FacehuggerAttack
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -750,7 +796,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 157db8acc81daedbe9e2da623ca5487c
+      Hash: aaa73611cd0b7a109361e30b944e2e8c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AstroScript
@@ -816,7 +862,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: a4b90793fff3b39a48bea2b79bf4c112
+      Hash: 446da503e05a906ba864afdba7ffc873
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AstroAttract
@@ -840,10 +886,16 @@ ScriptsOnlyBuild:
     className: CinemachineInputProvider
   - hash:
       serializedVersion: 2
-      Hash: e431d032a0df9bc312e56b9a26fe2286
+      Hash: 91371789dd0dbecc825f29817427c267
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TentacleController
+  - hash:
+      serializedVersion: 2
+      Hash: 9438ee738bffb15509a78c7987118ae7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FlyController
   - hash:
       serializedVersion: 2
       Hash: ffd3ed4fcd23b3e7745287c99a637247
@@ -928,6 +980,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestRunner.Utils
     className: TestRunCallbackListener
+  - hash:
+      serializedVersion: 2
+      Hash: 8b8f034ecda0193be497572e47215a6a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FacehuggerScript
   - hash:
       serializedVersion: 2
       Hash: 1351a1bf2c4086539cf0063006375478

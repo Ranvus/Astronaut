@@ -7,7 +7,7 @@ TagManager:
   - Obstacle
   - Enemy
   - Character
-  - Facehugger
+  - DeathWire
   layers:
   - Default
   - TransparentFX

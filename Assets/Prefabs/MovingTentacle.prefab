@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2266059156087143777}
   m_Layer: 0
   m_Name: Tentacle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9070667530677473925}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 13.97}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9070667532113961770}
@@ -74,13 +74,13 @@ SpriteRenderer:
   m_SortingLayerID: 980322281
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7529600356422717618, guid: 871ffc08faca0014cab5401e8f59f5bb,
+  m_Sprite: {fileID: 2496708414747939426, guid: 9b8a77c08ab5d914da2c04e50ca46181,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -120,8 +120,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03337469, y: -0.85931224}
-  m_Size: {x: 0.269992, y: 0.3232836}
+  m_Offset: {x: -0.0044112206, y: -0.85931224}
+  m_Size: {x: 0.24480152, y: 0.32328355}
   m_Direction: 0
 --- !u!114 &9070667530677473920
 MonoBehaviour:
@@ -135,9 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b2cadc08c35db418932eb7b7c270b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  playerIn: 0
+  characterIn: 0
   attackRange: 2
+  tentacleHp: 2
 --- !u!95 &2266059156087143777
 Animator:
   serializedVersion: 3

@@ -6,7 +6,6 @@ public class FacehuggerScript : MonoBehaviour
 {
     [Header("Scripts")]
     [SerializeField] internal FacehuggerMovement faceMove;
-    [SerializeField] internal FacehuggerAttack faceAtk;
 
     [Header("Facehugger components")]
     internal Rigidbody2D facehuggerRb;

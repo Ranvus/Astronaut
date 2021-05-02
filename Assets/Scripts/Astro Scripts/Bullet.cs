@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision)
+    [SerializeField] internal int astroDmg= 1;
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+        }
+
+        TentacleController tentacle = collision.GetComponent<TentacleController>();
+
+        if (tentacle != null)
+        {
+            tentacle.TakeDamage(astroDmg);
         }
     }
 }
