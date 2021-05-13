@@ -25,15 +25,6 @@ public class TurretBullet : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, bulletRot, 5f * Time.deltaTime);
     }
 
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Character"))
-        {
-            Destroy(gameObject);
-        }
-
-    }*/
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Character"))

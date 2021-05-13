@@ -6,11 +6,6 @@ public class AstroTakeDamage : MonoBehaviour
 {
     [SerializeField] internal AstroScript astroScr;
 
-    void Update()
-    {
-        
-    }
-
     internal void TakeDamage(int damage)
     {
         astroScr.hp -= damage;

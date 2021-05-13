@@ -147,6 +147,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5236322a4be8504aac4cb77fb71ca8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 0
+  curHp: 0
+  maxHp: 2
+  attackRange: 4
+  matFlash: {fileID: 0}
   turretShoot: {fileID: 3121226975977721585}
   turretGunTrack: {fileID: 618776420321940745}
   shootingRange: 4

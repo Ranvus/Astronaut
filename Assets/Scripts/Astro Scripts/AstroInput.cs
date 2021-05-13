@@ -28,8 +28,21 @@ public class AstroInput : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1") && (astroScr.canShoot == true))
         {
+            CinemachineShake.Instance.ShakeCamera(.1f, .1f);
             astroScr.astroShootScr.Shoot();
             astroScr.astroManScr.Recoil(-40f);
+            astroScr.isMove = true;
         }
+        else if (Input.GetButtonUp("Fire1"))
+        {
+            StartCoroutine(DelayAnimMove());
+        }
+    }
+
+    IEnumerator DelayAnimMove()
+    {
+        yield return new WaitForSeconds(2f);
+
+        astroScr.isMove = false;
     }
 }

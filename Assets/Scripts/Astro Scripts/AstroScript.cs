@@ -29,6 +29,7 @@ public class AstroScript : MonoBehaviour
     [SerializeField] internal float clampAngle = 90f;
     [SerializeField] internal float downLookAngle = 150f;
     [SerializeField] internal float upLookAngle = 30f;
+    [SerializeField] internal float knockbackForce;
 
     [Header("Shoot variables")]
     [SerializeField] internal float bulletForce = 20f;
@@ -36,6 +37,7 @@ public class AstroScript : MonoBehaviour
     [Header("Boolean variables")]
     internal bool canShoot = true;
     internal bool mouseRotationActive = true;
+    internal bool isMove = false;
 
     [Header("References variables")]
     [SerializeField] internal GameObject arrow;

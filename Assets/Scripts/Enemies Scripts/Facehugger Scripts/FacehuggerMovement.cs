@@ -16,7 +16,6 @@ public class FacehuggerMovement : MonoBehaviour
 
     [Header("Move variables")]
     private bool hasTurn;
-    internal bool isMove = true;
     private float ZaxiesAdd;
     private int direction;
 
@@ -30,11 +29,8 @@ public class FacehuggerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isMove)
-        {
-            CheckGroundOrWall();
-            Movement();
-        }
+        CheckGroundOrWall();
+        Movement();
     }
 
     private void CheckGroundOrWall()
@@ -116,7 +112,7 @@ public class FacehuggerMovement : MonoBehaviour
 
     private void Movement()
     {
-        faceScr.facehuggerRb.velocity = transform.right * faceScr.facehuggerSpeed;
+        faceScr.facehuggerRb.velocity = transform.right * faceScr.moveSpeed;
     }
 
     private void OnDrawGizmos()

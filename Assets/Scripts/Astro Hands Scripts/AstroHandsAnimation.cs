@@ -19,21 +19,10 @@ public class AstroHandsAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AnimUpdate();
-
         if (Input.GetButtonDown("Fire1"))
         {
             anim.SetTrigger("IsShoot");
         }
-        else
-        {
-            isShoot = false;
-        }
     }
 
-    private void AnimUpdate()
-    {
-        anim.SetBool("IsShoot", isShoot);
-        anim.SetFloat("Rotation", astroRot.angle);
-    }
 }

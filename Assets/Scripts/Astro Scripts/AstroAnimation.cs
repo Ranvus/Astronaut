@@ -42,5 +42,6 @@ public class AstroAnimation : MonoBehaviour
         anim.SetBool("BodyDown", bodyDown);
         anim.SetBool("BodyUp", bodyUp);
         anim.SetBool("IsAttract", astroScr.astroAttractScr.isAttract);
+        anim.SetBool("IsMove", astroScr.isMove);
     }
 }

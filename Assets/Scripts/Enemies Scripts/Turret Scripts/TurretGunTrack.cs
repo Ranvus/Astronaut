@@ -25,11 +25,11 @@ public class TurretGunTrack : MonoBehaviour
 
         float distanceFromPlayer = Vector2.Distance(turretScr.player.position, transform.position);
 
-        if (distanceFromPlayer <= turretScr.shootingRange)
+        if (distanceFromPlayer <= turretScr.attackRange)
         {
             playerIn = true;
         }
-        else if (distanceFromPlayer >= turretScr.shootingRange)
+        else if (distanceFromPlayer >= turretScr.attackRange)
         {
             playerIn = false;
         }

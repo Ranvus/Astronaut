@@ -27,17 +27,17 @@ public class TurretShoot : MonoBehaviour
         print(anim.GetCurrentAnimatorStateInfo(0).length);
 
         float distanceFromPlayer = Vector2.Distance(turretScr.player.position, transform.position);
-        if (distanceFromPlayer <= turretScr.shootingRange && nextFireTime < Time.time && sprite.sprite == finalFrame)
+        if (distanceFromPlayer <= turretScr.attackRange && nextFireTime < Time.time && sprite.sprite == finalFrame)
         {
             Instantiate(turretBulletPrefab, turretFirePoint.position, turretScr.turretGunTrack.turretGunRot); //Создание префаба пули в точке firePoint.position с углом firePoint.rotation
             nextFireTime = Time.time + turretScr.fireRate;
         }
 
-        if (distanceFromPlayer <= turretScr.shootingRange)
+        if (distanceFromPlayer <= turretScr.attackRange)
         {
             playerIn = true;
         }
-        else if (distanceFromPlayer >= turretScr.shootingRange)
+        else if (distanceFromPlayer >= turretScr.attackRange)
         {
             playerIn = false;
         }
@@ -48,6 +48,6 @@ public class TurretShoot : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, turretScr.shootingRange);
+        Gizmos.DrawWireSphere(transform.position, turretScr.attackRange);
     }
 }

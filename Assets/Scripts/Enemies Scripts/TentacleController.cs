@@ -2,57 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TentacleController : MonoBehaviour
+public class TentacleController : Enemy
 {
-    /*[SerializeField] private Transform pos1, pos2;
-    [SerializeField] private float speed;
-    [SerializeField] private Transform startPos;
-
-    private Vector3 nextPos;
-    [SerializeField] private float delay;
-    private float currentTime;*/
-
-
     [Header("References")]
     private Transform character;
 
     [Header("Animation variables")]
     private Animator anim;
-    [SerializeField] private bool characterIn;
-
-    [Header("Tentacle variables")]
-    [SerializeField] private float attackRange;
-    [SerializeField] private float tentacleHp;
-
-
+    [SerializeField] internal bool characterIn;
 
     private void Start()
     {
-        /*nextPos = startPos.position;
-        currentTime = delay;*/
         anim = GetComponent<Animator>();
         character = GameObject.FindGameObjectWithTag("Character").transform;
     }
 
     void Update()
     {
-        /*if (transform.position == pos1.position)
-        {
-            currentTime -= Time.deltaTime;
-            if (currentTime <= 0f)
-            {
-                nextPos = pos2.position;
-                currentTime = delay;
-            }
-            print(currentTime);
-        }
-        if (transform.position == pos2.position)
-        {
-            nextPos = pos1.position;
-        }
-
-        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);*/
-
         float distanceFromPlayer = Vector2.Distance(character.position, transform.position);
 
         if (distanceFromPlayer <= attackRange)
@@ -70,22 +36,29 @@ public class TentacleController : MonoBehaviour
     private void AnimUpdate()
     {
         anim.SetBool("CharacterIn", characterIn);
-        anim.SetFloat("TentacleHp", tentacleHp);
+        anim.SetFloat("TentacleHp", curHp);
     }
 
-    internal void TakeDamage(int damage)
+    protected override void TakeDamage(int damage)
     {
         if (characterIn)
         {
-            tentacleHp -= damage;
+            sr.material = matFlash; 
+            StartCoroutine(DeathFlash());
+            curHp -= damage;
         }
-        if (tentacleHp <= 0)
+        if (curHp <= 0)
         {
             Death();
         }
+        else
+        {
+            Invoke("ResetMaterial", .1f);
+        }
+        
     }
 
-    private void Death()
+    protected override void Death()
     {
         Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + .5f);
     }
@@ -94,5 +67,14 @@ public class TentacleController : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, attackRange);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        AstroScript character = collision.GetComponent<AstroScript>();
+        if (collision.CompareTag("Character"))
+        {
+            character.rb.AddForce(-character.rb.velocity.normalized * character.knockbackForce, ForceMode2D.Impulse);
+        }
     }
 }

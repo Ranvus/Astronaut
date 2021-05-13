@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TurretScript : MonoBehaviour
+public class TurretScript : Enemy
 {
     [Header("Scripts")]
     [SerializeField] internal TurretShoot turretShoot;
     [SerializeField] internal TurretGunTrack turretGunTrack;
 
-    [SerializeField] internal float shootingRange;
+    [Header("Turret variables")]
     [SerializeField] internal float fireRate = 3f;
 
     internal Transform player;

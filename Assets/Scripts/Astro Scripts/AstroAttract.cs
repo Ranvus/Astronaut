@@ -31,6 +31,7 @@ public class AstroAttract : MonoBehaviour
         {
             isTouchingObstacle = false;
         }
+        print(hit.collider.tag);
 
         rotCur = Quaternion.FromToRotation(Vector3.up, hit.normal); //Создание нормали к поверхности 
         posCur = new Vector3(hit.point.x, hit.point.y, transform.position.z); //Координаты точки, где луч сталкивается с платформой.

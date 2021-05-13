@@ -76,10 +76,12 @@
     <Compile Include="Assets\Scripts\Astro Scripts\AstroShoot.cs" />
     <Compile Include="Assets\Scripts\Astro Scripts\AstroTakeDamage.cs" />
     <Compile Include="Assets\Scripts\Astro Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Camera Scripts\CinemachineShake.cs" />
     <Compile Include="Assets\Scripts\Camera Scripts\RoomChange.cs" />
+    <Compile Include="Assets\Scripts\Enemies Scripts\DroneController.cs" />
+    <Compile Include="Assets\Scripts\Enemies Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Enemies Scripts\Facehugger Scripts\FacehuggerMovement.cs" />
     <Compile Include="Assets\Scripts\Enemies Scripts\Facehugger Scripts\FacehuggerScript.cs" />
-    <Compile Include="Assets\Scripts\Enemies Scripts\FlyController.cs" />
     <Compile Include="Assets\Scripts\Enemies Scripts\TentacleController.cs" />
     <Compile Include="Assets\Scripts\Enemies Scripts\Turret Scripts\TurretBullet.cs" />
     <Compile Include="Assets\Scripts\Enemies Scripts\Turret Scripts\TurretGunTrack.cs" />
@@ -704,7 +706,16 @@
       <HintPath>C:/Desktop/sd/GameShit/Unity Projects/Astronaut/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
+      <Project>{A3F8CC46-2497-72B4-16B2-EF21F17FB664}</Project>
+      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{76ECA143-53F9-F7F8-ED2A-3603ED3D09F5}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

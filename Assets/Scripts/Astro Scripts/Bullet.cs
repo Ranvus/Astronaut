@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] internal int astroDmg= 1;
+
+
+    [SerializeField] internal int astroDmg = 1;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,11 +15,12 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        TentacleController tentacle = collision.GetComponent<TentacleController>();
+        /*TentacleController tentacle = collision.GetComponent<TentacleController>();
 
         if (tentacle != null)
         {
-            tentacle.TakeDamage(astroDmg);
-        }
+            print(tentacle.curHp);
+            tentacle.TakeDamage(tentacle.curHp, astroDmg);
+        }*/
     }
 }
