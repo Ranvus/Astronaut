@@ -11,12 +11,14 @@ public class AstroHandsChange : MonoBehaviour
     [SerializeField] AstroHandsRotate astroHands;
     [SerializeField] private Transform player;
     [SerializeField] private Transform firePoint;
+    internal SpriteRenderer handsSr;
 
     internal float angle;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        handsSr = GetComponent<SpriteRenderer>();
     }
 
     void Update()

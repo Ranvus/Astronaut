@@ -1,40 +1,55 @@
 fileFormatVersion: 2
-guid: b337acc10145f824ca217554f7a41ce3
+guid: a034f8dd0da129b4c92cbc17241f5f6c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8904922235451012202
-    second: Astro_up_idle_0
+      213: 2248056928218106731
+    second: Astro_idle_up_0
   - first:
-      213: 4055311163068469855
-    second: Astro_up_idle_1
+      213: -6212282505132623769
+    second: Astro_idle_up_1
   - first:
-      213: -2382275442488676614
-    second: Astro_up_idle_2
+      213: 1450873050589658149
+    second: Astro_idle_up_2
   - first:
-      213: -3113030287637538586
-    second: Astro_up_idle_3
+      213: -1194434819644968772
+    second: Astro_idle_up_3
   - first:
-      213: -2859654523003994098
-    second: Astro_up_idle_4
+      213: -3484167887863730145
+    second: Astro_idle_up_4
   - first:
-      213: 489189874584206749
-    second: Astro_up_idle_5
+      213: -8799717514509101291
+    second: Astro_idle_up_5
   - first:
-      213: 8444859445298918037
-    second: Astro_up_idle_6
+      213: -3292855532627998155
+    second: Astro_idle_up_6
   - first:
-      213: 4074372729836267046
-    second: Astro_up_idle_7
+      213: -5978872739822926685
+    second: Astro_idle_up_7
   - first:
-      213: -4407533722806727875
-    second: Astro_up_idle_8
+      213: -960956974042049224
+    second: Astro_idle_up_8
   - first:
-      213: 8083376609168269884
-    second: Astro_up_idle_9
+      213: -5358563019183173886
+    second: Astro_idle_up_9
   - first:
-      213: 6615827022308504144
-    second: Astro_up_idle_10
+      213: 8670717817133164585
+    second: Astro_idle_up_10
+  - first:
+      213: -5396681036197695184
+    second: Astro_idle_up_11
+  - first:
+      213: 6356011883758345813
+    second: Astro_idle_up_12
+  - first:
+      213: 8829731519800578909
+    second: Astro_idle_up_13
+  - first:
+      213: -7026356074232599293
+    second: Astro_idle_up_14
+  - first:
+      213: -5515853481334903713
+    second: Astro_idle_up_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,7 +112,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,7 +124,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +136,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -132,7 +147,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Astro_up_idle_0
+      name: Astro_idle_up_0
       rect:
         serializedVersion: 2
         x: 0
@@ -146,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69b077b386c5b6480800000000000000
-      internalID: -8904922235451012202
+      spriteID: b6bcb419dd3b23f10800000000000000
+      internalID: 2248056928218106731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astro_up_idle_1
+      name: Astro_idle_up_1
       rect:
         serializedVersion: 2
         x: 64
@@ -167,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f525f50540c574830800000000000000
-      internalID: 4055311163068469855
+      spriteID: 7683235c9f989c9a0800000000000000
+      internalID: -6212282505132623769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astro_up_idle_2
+      name: Astro_idle_up_2
       rect:
         serializedVersion: 2
         x: 128
@@ -188,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afe635d5b1570fed0800000000000000
-      internalID: -2382275442488676614
+      spriteID: 52c759a3a59822410800000000000000
+      internalID: 1450873050589658149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astro_up_idle_3
+      name: Astro_idle_up_3
       rect:
         serializedVersion: 2
         x: 192
@@ -209,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e8155a627b4cc4d0800000000000000
-      internalID: -3113030287637538586
+      spriteID: cb034b32cd38c6fe0800000000000000
+      internalID: -1194434819644968772
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astro_up_idle_4
+      name: Astro_idle_up_4
       rect:
         serializedVersion: 2
         x: 256
@@ -230,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e000208cc577058d0800000000000000
-      internalID: -2859654523003994098
+      spriteID: f103f0214cfb5afc0800000000000000
+      internalID: -3484167887863730145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astro_up_idle_5
+      name: Astro_idle_up_5
       rect:
         serializedVersion: 2
         x: 320
@@ -251,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9d3f4e5993f9c600800000000000000
-      internalID: 489189874584206749
+      spriteID: 517d6ef1b8f11e580800000000000000
+      internalID: -8799717514509101291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astro_up_idle_6
+      name: Astro_idle_up_6
       rect:
         serializedVersion: 2
         x: 384
@@ -272,14 +287,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 592f4273cea223570800000000000000
-      internalID: 8444859445298918037
+      spriteID: 53a4701e65d6d42d0800000000000000
+      internalID: -3292855532627998155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astro_up_idle_7
+      name: Astro_idle_up_7
       rect:
         serializedVersion: 2
         x: 448
@@ -293,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 626ed6c29641b8830800000000000000
-      internalID: 4074372729836267046
+      spriteID: 3a48699abe6c60da0800000000000000
+      internalID: -5978872739822926685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astro_up_idle_8
+      name: Astro_idle_up_8
       rect:
         serializedVersion: 2
         x: 512
@@ -314,14 +329,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3bcc846e6b45d2c0800000000000000
-      internalID: -4407533722806727875
+      spriteID: 8351ac539bef9a2f0800000000000000
+      internalID: -960956974042049224
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astro_up_idle_9
+      name: Astro_idle_up_9
       rect:
         serializedVersion: 2
         x: 576
@@ -335,14 +350,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c322d2fc23ced2070800000000000000
-      internalID: 8083376609168269884
+      spriteID: 20fca0f235f82a5b0800000000000000
+      internalID: -5358563019183173886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astro_up_idle_10
+      name: Astro_idle_up_10
       rect:
         serializedVersion: 2
         x: 640
@@ -356,8 +371,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 052f028ef9320db50800000000000000
-      internalID: 6615827022308504144
+      spriteID: 9286fdd4ae3945870800000000000000
+      internalID: 8670717817133164585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astro_idle_up_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031795fb0332b15b0800000000000000
+      internalID: -5396681036197695184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astro_idle_up_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ed397f127153850800000000000000
+      internalID: 6356011883758345813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astro_idle_up_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5398cb0902898a70800000000000000
+      internalID: 8829731519800578909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astro_idle_up_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d25f1b06e5d7e90800000000000000
+      internalID: -7026356074232599293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astro_idle_up_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c6ee3ab70c373b0800000000000000
+      internalID: -5515853481334903713
       vertices: []
       indices: 
       edges: []

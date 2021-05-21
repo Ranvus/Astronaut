@@ -21,7 +21,7 @@ public class AstroScript : MonoBehaviour
     internal Camera cam;
 
     [Header("Astro move variables")]
-    [SerializeField] internal float hp = 5f;
+    [SerializeField] internal int hp;
 
     [Header("Astro move variables")]
     [SerializeField] internal float clampVelocity = 3f;

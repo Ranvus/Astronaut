@@ -71,8 +71,6 @@ GameObject:
   - component: {fileID: 1409770914471332296}
   - component: {fileID: 1409770914471332299}
   - component: {fileID: 3009273899311190330}
-  - component: {fileID: 3948666163678327694}
-  - component: {fileID: 8670675235428878244}
   - component: {fileID: 1409770914471332309}
   - component: {fileID: 6886146843395284084}
   - component: {fileID: 2113203153656524577}
@@ -177,58 +175,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.37060308, y: 0.54869425}
   m_EdgeRadius: 0
---- !u!61 &3948666163678327694
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409770914471332308}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.18820941, y: -0.3002389}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.45628333, y: 0.11272657}
-  m_EdgeRadius: 0
---- !u!61 &8670675235428878244
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1409770914471332308}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.22666276, y: -0.08062512}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.358042, y: 0.29110825}
-  m_EdgeRadius: 0
 --- !u!50 &1409770914471332309
 Rigidbody2D:
   serializedVersion: 4
@@ -244,7 +190,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -283,15 +229,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   curHp: 0
-  maxHp: 2
+  maxHp: 5
   attackRange: 0
-  enemyDmg: 2
+  enemyDmg: 1
+  knockbackForce: 2
   checkCircleRadius: 0.18
   rightCheck: {fileID: 1409770913271811634}
   roofCheck: {fileID: 1409770913258241941}
   groundCheck: {fileID: 1409770914624385343}
   dirX: 1
-  dirY: 0.25
+  dirY: 0.5
   droneObstacleLayer:
     serializedVersion: 2
     m_Bits: 256

@@ -13,11 +13,15 @@ public class AstroTakeDamage : MonoBehaviour
         if (astroScr.hp <= 0)
         {
             Death();
+            //astroScr.astroAnimScr.isDead = true;
         }
     }
 
     private void Death()
     {
-        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + .5f);
+        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 1f);
+        astroScr.hand.SetActive(false);
+        astroScr.secondHand.SetActive(false);
+        astroScr.canShoot = false;
     }
 }

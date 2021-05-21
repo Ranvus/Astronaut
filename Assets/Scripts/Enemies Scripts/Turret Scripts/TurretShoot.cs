@@ -24,8 +24,6 @@ public class TurretShoot : MonoBehaviour
 
     void Update()
     {
-        print(anim.GetCurrentAnimatorStateInfo(0).length);
-
         float distanceFromPlayer = Vector2.Distance(turretScr.player.position, transform.position);
         if (distanceFromPlayer <= turretScr.attackRange && nextFireTime < Time.time && sprite.sprite == finalFrame)
         {

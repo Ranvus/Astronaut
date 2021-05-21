@@ -15,7 +15,6 @@ ScriptsOnlyBuild:
     - AstroTakeDamage
     - Bullet
     - CinemachineShake
-    - DroneController
     - RoomChange
     Cinemachine.dll:
     - Cinemachine.CinemachineBasicMultiChannelPerlin
@@ -50,13 +49,17 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.RandomBrush
     - UnityEditor.Tilemaps.TintBrush
     - UnityEditor.Tilemaps.TintBrushSmooth
+    Unity.2D.Tilemap.Extras.dll:
+    - UnityEngine.Tilemaps.AnimatedTile
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -121,6 +124,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12404}
     - Class: 114
+      Script: {instanceID: 12478}
+    - Class: 114
       Script: {instanceID: 12526}
     - Class: 114
       Script: {instanceID: 12666}
@@ -136,8 +141,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13542}
     - Class: 114
       Script: {instanceID: 13612}
-    - Class: 114
-      Script: {instanceID: 13660}
     - Class: 114
       Script: {instanceID: 13702}
     - Class: 114
@@ -229,7 +232,7 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: ac817bd5f85fda2b097decf4946f500d
+      Hash: dc01b202d21ed2b6559b5d2072b0a0f7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RoomChange
@@ -325,7 +328,7 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 04049c7b41307ecb083f53130d3f0d12
+      Hash: 8dc154d02b0c242192aafae4080b795c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TurretScript
@@ -799,7 +802,7 @@ ScriptsOnlyBuild:
     className: HorizontalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 3282829771f773b1e0f0834581eaffcd
+      Hash: 8c44dd637c93f627808f31ac4a694065
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Enemy
@@ -877,13 +880,13 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: ec9e5fab519441d86aa12579d4b8b90f
+      Hash: 297773cd7d9ba5f7a7eaa16dfc36acd1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DroneController
   - hash:
       serializedVersion: 2
-      Hash: b5071dbb720818a3ef4ca5c34fc8cc70
+      Hash: 28031b0ce8941f35577e58d66846933e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AstroScript
@@ -991,7 +994,7 @@ ScriptsOnlyBuild:
     className: CinemachineInputProvider
   - hash:
       serializedVersion: 2
-      Hash: 2ae92d60adb2ae0d87d44913d6623ee1
+      Hash: cbf07ba8beb60ddc0b6510dfe795468f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TentacleController
@@ -1093,7 +1096,7 @@ ScriptsOnlyBuild:
     className: TestRunCallbackListener
   - hash:
       serializedVersion: 2
-      Hash: 47bfef8ad6bad0702f7ac8773b565378
+      Hash: a19d3c81159b4ee1ea1f5465294c78be
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: FacehuggerScript

@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] internal int maxHp;
     [SerializeField] internal float attackRange;
     [SerializeField] internal int enemyDmg;
+    [SerializeField] internal float knockbackForce;
 
     internal Material matFlash;
     internal Material matDefault;
@@ -66,12 +67,14 @@ public class Enemy : MonoBehaviour
         {
             TakeDamage(bullet.astroDmg);
         }
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Character")
+        Rigidbody2D character = collision.GetComponent<Rigidbody2D>();
+        if (collision.CompareTag("Character"))
         {
+            Vector2 difference = character.transform.position - transform.position;
+            difference = difference.normalized * knockbackForce;
+            character.AddForce(difference, ForceMode2D.Impulse);
+            CinemachineShake.Instance.ShakeCamera(.5f, .1f);
             characterDmg.TakeDamage(enemyDmg);
         }
     }

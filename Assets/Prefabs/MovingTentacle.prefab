@@ -140,6 +140,7 @@ MonoBehaviour:
   maxHp: 3
   attackRange: 3
   enemyDmg: 1
+  knockbackForce: 2
   characterIn: 0
 --- !u!95 &2266059156087143777
 Animator:

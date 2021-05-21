@@ -74,12 +74,16 @@ public class DroneController : Enemy
         Gizmos.DrawWireSphere(groundCheck.transform.position, checkCircleRadius);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
-        AstroScript character = collision.GetComponent<AstroScript>();
+        Rigidbody2D character = collision.GetComponent<Rigidbody2D>();
         if (collision.CompareTag("Character"))
         {
-            character.rb.velocity = character.transform.position + (character.transform.position - transform.position).normalized * 0.6f;
+            Vector2 difference = character.transform.position - transform.position;
+            difference = difference.normalized * knockbackForce;
+            character.AddForce(difference, ForceMode2D.Impulse);
+            CinemachineShake.Instance.ShakeCamera(.5f, .1f);
+            //character.rb.velocity = character.transform.position + (character.transform.position - transform.position).normalized * 0.6f;
         }
-    }
+    }*/
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c1bd3eb99ff3bd4478b7a7bed75d9a5a
+guid: 1ca3e29b2d3271249bc32f70de1a8c0d
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: -935405538660185292
     second: Astro_attract_2
+  - first:
+      213: -4126050790916309668
+    second: Astro_attract_3
+  - first:
+      213: -6989042223362753460
+    second: Astro_attract_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -73,7 +79,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -85,7 +91,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,7 +103,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -166,6 +172,48 @@ TextureImporter:
       bones: []
       spriteID: 43b0a3b5e95c403f0800000000000000
       internalID: -935405538660185292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astro_attract_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5db63a9aa25db6c0800000000000000
+      internalID: -4126050790916309668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Astro_attract_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4cb14c902fe10f90800000000000000
+      internalID: -6989042223362753460
       vertices: []
       indices: 
       edges: []

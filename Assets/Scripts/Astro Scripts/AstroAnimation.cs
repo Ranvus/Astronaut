@@ -12,6 +12,7 @@ public class AstroAnimation : MonoBehaviour
 
     internal bool bodyUp;
     internal bool bodyDown;
+    internal bool isDead = false;
 
     private void Start()
     {
@@ -35,6 +36,13 @@ public class AstroAnimation : MonoBehaviour
             bodyUp = false;
             bodyDown = false;
         }
+
+        if (astroScr.hp <= 0)
+        {
+            isDead = true;
+        }
+
+        //StartCoroutine(Death());
     }
 
     private void AnimUpdate()
@@ -43,5 +51,13 @@ public class AstroAnimation : MonoBehaviour
         anim.SetBool("BodyUp", bodyUp);
         anim.SetBool("IsAttract", astroScr.astroAttractScr.isAttract);
         anim.SetBool("IsMove", astroScr.isMove);
+        anim.SetBool("IsDead", isDead);
+        anim.SetInteger("HP", astroScr.hp);
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(1f);
+        isDead = false;
     }
 }

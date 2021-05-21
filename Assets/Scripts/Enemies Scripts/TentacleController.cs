@@ -69,12 +69,16 @@ public class TentacleController : Enemy
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
-        AstroScript character = collision.GetComponent<AstroScript>();
+        //AstroScript character = collision.GetComponent<AstroScript>();
+        Rigidbody2D character = collision.GetComponent<Rigidbody2D>();
         if (collision.CompareTag("Character"))
         {
-            character.rb.AddForce(-character.rb.velocity.normalized * character.knockbackForce, ForceMode2D.Impulse);
+            Vector2 difference = character.transform.position - transform.position;
+            difference = difference.normalized * knockbackForce;
+            character.AddForce(difference, ForceMode2D.Impulse);
+            //character.rb.AddForce(-character.rb.velocity.normalized * character.knockbackForce, ForceMode2D.Impulse);
         }
-    }
+    }*/
 }
