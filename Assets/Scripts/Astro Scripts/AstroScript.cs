@@ -38,6 +38,7 @@ public class AstroScript : MonoBehaviour
     internal bool canShoot = true;
     internal bool mouseRotationActive = true;
     internal bool isMove = false;
+    public bool isDead = false;
 
     [Header("References variables")]
     [SerializeField] internal GameObject arrow;

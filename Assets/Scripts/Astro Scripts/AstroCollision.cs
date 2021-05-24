@@ -20,7 +20,7 @@ public class AstroCollision : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("DeathWire")|| collision.CompareTag("Rocket"))
+        if (collision.CompareTag("DeathWire") || collision.CompareTag("Rocket"))
         {
             astroScr.astroDmg.TakeDamage(1);
             astroScr.rb.AddForce(-astroScr.rb.velocity.normalized * astroScr.knockbackForce, ForceMode2D.Impulse);
@@ -31,7 +31,7 @@ public class AstroCollision : MonoBehaviour
         {
             sr.material = matFlash;
             astroScr.astroHandsChScr.handsSr.material = matFlash;
-            if (astroScr.hp <= 0)
+            if (HPVisual.hpSystemStatic.IsDead())
             {
                 StartCoroutine(DeathFlash());
             }

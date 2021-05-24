@@ -37,7 +37,7 @@ public class AstroAnimation : MonoBehaviour
             bodyDown = false;
         }
 
-        if (astroScr.hp <= 0)
+        if (HPVisual.hpSystemStatic.IsDead())
         {
             isDead = true;
         }

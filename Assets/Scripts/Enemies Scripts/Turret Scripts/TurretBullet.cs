@@ -7,7 +7,7 @@ public class TurretBullet : MonoBehaviour
     private Transform player;
     [SerializeField] private float turretBulletSpeed;
 
-    [SerializeField] private int turretDmg = 1;
+    [SerializeField] private int turretDmg;
 
     void Start()
     {
@@ -32,11 +32,11 @@ public class TurretBullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        AstroTakeDamage astro = collision.GetComponent<AstroTakeDamage>();
+        /*AstroTakeDamage astro = collision.GetComponent<AstroTakeDamage>();
 
         if (astro != null)
         {
             astro.TakeDamage(turretDmg);
-        }
+        }*/
     }
 }

@@ -8,12 +8,10 @@ public class AstroTakeDamage : MonoBehaviour
 
     internal void TakeDamage(int damage)
     {
-        astroScr.hp -= damage;
-
-        if (astroScr.hp <= 0)
+        HPVisual.hpSystemStatic.Damage(damage);
+        if (HPVisual.hpSystemStatic.IsDead())
         {
             Death();
-            //astroScr.astroAnimScr.isDead = true;
         }
     }
 

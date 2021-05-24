@@ -225,21 +225,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 5efbffff
+      m_ExpandedIDs: b2f8ffff5efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Canvas
+        m_OriginalName: Canvas
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -1870
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -299,8 +299,8 @@ MonoBehaviour:
     y: 0
     width: 890
     height: 545
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 9}
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: d69a67902db7f994ca099bec79d22ce1
-  m_Gizmos: 0
+  m_Gizmos: 1
   m_SceneIsLit: 1
   m_SceneLighting: 1
   m_2DMode: 1
@@ -344,9 +344,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 5.100399, y: -0.9662935, z: 3.7231715}
+    m_Target: {x: 330.10938, y: 253.10005, z: -56.625}
     speed: 2
-    m_Value: {x: 5.100399, y: -0.9662935, z: 3.7231715}
+    m_Value: {x: 330.10938, y: 253.10005, z: -56.625}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -396,9 +396,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.280471
+    m_Target: 422.73132
     speed: 2
-    m_Value: 7.280471
+    m_Value: 422.73132
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -516,19 +516,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Graphics/HP
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Graphics/HP
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Desktop\sd\GameShit\Unity Projects\Astronaut
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 87}
-    m_SelectedIDs: b4470000
-    m_LastClickedID: 18356
+    m_SelectedIDs: ce4d0000
+    m_LastClickedID: 19918
     m_ExpandedIDs: 00000000784700007a4700007c4700007e470000804700008247000084470000864700008847000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -582,10 +582,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e63a0000
-    m_LastClickedInstanceID: 15078
+    m_SelectedInstanceIDs: 42f8ffff
+    m_LastClickedInstanceID: -1982
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300002a480000e63800008c3a00003c3b0000183b00009a3a00006e3b00006a3b0000843b00007e3b0000f43b0000e83b0000e43b0000ee3b0000283b0000664000006a400000c0400000ce500000b84200005a710000343900004c3b0000e88500002472000078450000a4450000a6450000da450000d440000030500000964400009844000066410000e0480000c8440000f4450000de440000fc450000f6450000f4440000f84400007a44000080440000fa9b00001245000018450000864400000000000060460000b6450000b245000056420000ac450000cc44000032490000b4510000b8510000b0510000
+    m_ExpandedInstanceIDs: c62300002a480000e63800008c3a00003c3b0000183b00009a3a00006e3b00006a3b0000843b00007e3b0000f43b0000e83b0000e43b0000ee3b0000283b0000664000006a400000c0400000ce500000b84200005a710000343900004c3b0000e88500002472000078450000a4450000a6450000da450000d440000030500000964400009844000066410000e0480000c8440000f4450000de440000fc450000f6450000f4440000f84400007a44000080440000fa9b00001245000018450000864400000000000060460000b6450000b245000056420000ac450000cc44000032490000b4510000b8510000b05100009c470000e24d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -852,8 +852,8 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 15078
-  m_LastVerticalScrollValue: 900
+  m_LastInspectedObjectInstanceID: -1982
+  m_LastVerticalScrollValue: 0
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
