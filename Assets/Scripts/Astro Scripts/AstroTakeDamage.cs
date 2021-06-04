@@ -12,6 +12,7 @@ public class AstroTakeDamage : MonoBehaviour
         if (HPVisual.hpSystemStatic.IsDead())
         {
             Death();
+            StartCoroutine(SceneRestart());
         }
     }
 
@@ -21,5 +22,10 @@ public class AstroTakeDamage : MonoBehaviour
         astroScr.hand.SetActive(false);
         astroScr.secondHand.SetActive(false);
         astroScr.canShoot = false;
+    }
+
+    IEnumerator SceneRestart()
+    {
+        yield return new WaitForSeconds(2f);
     }
 }

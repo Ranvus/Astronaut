@@ -63,8 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HeartsHealthSystem\Scripts\HeartsHealthSystem.cs" />
-    <Compile Include="Assets\HeartsHealthSystem\Scripts\HeartsHealthVisual.cs" />
+    <Compile Include="Assets\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Astro Hands Scripts\AstroHandsAnimation.cs" />
     <Compile Include="Assets\Scripts\Astro Hands Scripts\AstroHandsChange.cs" />
     <Compile Include="Assets\Scripts\Astro Hands Scripts\AstroHandsRotate.cs" />
@@ -91,6 +90,8 @@
     <Compile Include="Assets\Scripts\Enemies Scripts\Turret Scripts\TurretShoot.cs" />
     <Compile Include="Assets\Scripts\HP\HPSystem.cs" />
     <Compile Include="Assets\Scripts\HP\HPVisual.cs" />
+    <Compile Include="Assets\Scripts\LevelLoader.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

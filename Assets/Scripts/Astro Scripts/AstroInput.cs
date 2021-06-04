@@ -11,6 +11,8 @@ public class AstroInput : MonoBehaviour
     internal Vector2 mousePos;
     internal bool rotateBtnActive = true;
 
+    [SerializeField] private AudioSource shootSound;
+
     private void Start()
     {
         print("Astro Input");
@@ -31,6 +33,7 @@ public class AstroInput : MonoBehaviour
             astroScr.astroShootScr.Shoot();
             astroScr.astroManScr.Recoil(-40f);
             astroScr.isMove = true;
+            shootSound.Play();
         }
         else if (Input.GetButtonUp("Fire1"))
         {

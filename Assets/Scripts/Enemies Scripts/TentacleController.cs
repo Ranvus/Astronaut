@@ -6,20 +6,31 @@ public class TentacleController : Enemy
 {
     [Header("References")]
     private Transform character;
+    private AudioSource tentaclSound;
 
     [Header("Animation variables")]
     private Animator anim;
     [SerializeField] internal bool characterIn;
 
+    private float distanceFromPlayer;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
+        tentaclSound = GetComponent<AudioSource>();
         character = GameObject.FindGameObjectWithTag("Character").transform;
     }
 
     void Update()
     {
-        float distanceFromPlayer = Vector2.Distance(character.position, transform.position);
+        if (character == null)
+        {
+            distanceFromPlayer = 0;
+        }
+        else
+        {
+            distanceFromPlayer = Vector2.Distance(character.position, transform.position);
+        }
 
         if (distanceFromPlayer <= attackRange)
         {
@@ -31,6 +42,11 @@ public class TentacleController : Enemy
         }
 
         AnimUpdate();
+    }
+
+    private void TentacleSound()
+    {
+        tentaclSound.Play();
     }
 
     private void AnimUpdate()
@@ -68,17 +84,4 @@ public class TentacleController : Enemy
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //AstroScript character = collision.GetComponent<AstroScript>();
-        Rigidbody2D character = collision.GetComponent<Rigidbody2D>();
-        if (collision.CompareTag("Character"))
-        {
-            Vector2 difference = character.transform.position - transform.position;
-            difference = difference.normalized * knockbackForce;
-            character.AddForce(difference, ForceMode2D.Impulse);
-            //character.rb.AddForce(-character.rb.velocity.normalized * character.knockbackForce, ForceMode2D.Impulse);
-        }
-    }*/
 }

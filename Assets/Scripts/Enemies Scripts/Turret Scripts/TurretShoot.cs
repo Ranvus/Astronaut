@@ -15,6 +15,7 @@ public class TurretShoot : MonoBehaviour
     [SerializeField] internal Transform turretFirePoint;
     [SerializeField] private GameObject turretBulletPrefab;
     [SerializeField] private Sprite finalFrame;
+    [SerializeField] private AudioSource rocketLaunchSound;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class TurretShoot : MonoBehaviour
         {
             Instantiate(turretBulletPrefab, turretFirePoint.position, turretScr.turretGunTrack.turretGunRot); //Создание префаба пули в точке firePoint.position с углом firePoint.rotation
             nextFireTime = Time.time + turretScr.fireRate;
+            rocketLaunchSound.Play();
         }
 
         if (distanceFromPlayer <= turretScr.attackRange)

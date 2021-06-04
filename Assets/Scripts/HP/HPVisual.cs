@@ -23,7 +23,7 @@ public class HPVisual : MonoBehaviour
 
     private void Start()
     {
-        HPSystem hpSystem = new HPSystem(1);
+        HPSystem hpSystem = new HPSystem(5);
         SetHPSystem(hpSystem);
     }
 
@@ -38,17 +38,11 @@ public class HPVisual : MonoBehaviour
         {
             HPSystem.HP hp = hpList[i];
             CreateHPImage(hpAnchoredPosition).SetHPFragments(hp.GetFragmentAmount());
-            hpAnchoredPosition += new Vector2(30, 0);
+            hpAnchoredPosition += new Vector2(20, 0);
         }
 
         hpSystem.OnDamaged += HPSystem_OnDamaged;
-        //hpSystem.OnDead += HPSystem_OnDead;
     }
-
-    /*private void HPSystem_OnDead(object sender, System.EventArgs e)
-    {
-        isDead = true;
-    }*/
 
     private void HPSystem_OnDamaged(object sender, System.EventArgs e)
     {
@@ -69,7 +63,7 @@ public class HPVisual : MonoBehaviour
         hpGameObject.transform.localPosition = Vector3.zero;
 
         hpGameObject.GetComponent<RectTransform>().anchoredPosition = anchoredPosition;
-        hpGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(110, 110);
+        hpGameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(200, 200);
 
         Image hpImageUI = hpGameObject.GetComponent<Image>();
         hpImageUI.sprite = hp4Sprite;
